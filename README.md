@@ -204,6 +204,7 @@ The VR mod introduces an expanded controls menu accessible directly in the cockp
 ```
 
 ### Default Touch Controller Layout
+setting can be changed in settings->controls->quest mapping
 
 | Input | Primary Function | With `Left Grip` Held | With `Right Grip` Held |
 | :--- | :--- | :--- | :--- |
