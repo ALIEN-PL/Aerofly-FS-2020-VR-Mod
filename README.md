@@ -348,16 +348,14 @@ Accessible directly in-game under:
 
 ### Recommended Quest 3 Presets
 
-| Setting | Balanced (Recommended) | Ultra Fidelity | Max Smoothness (120Hz) |
-| :--- | :--- | :--- | :--- |
-| **Display Refresh** | **90 Hz** | 72 Hz | 120 Hz |
-| **Render Scale** | **1.00x** (Native) | 1.25x | 0.85x |
-| **MSAA** | **2x MSAA** | 4x MSAA | Off |
-| **Layer Sharpening**| **Quality (MQSR)** | Quality (MQSR) | Normal |
-| **Foveation (FFR)** | **Level 2** | Level 1 | Level 3 |
-| **AppSW** | Off | Off | On (60 → 120 FPS) |
-| **Swappy Bypass** | On | On | On |
-| **Target Hardware** | Meta Quest 3 | Meta Quest 3 | Meta Quest 3 / 3S |
+| Setting | Balanced (Recommended) | Ultra Fidelity | Max Smoothness (120Hz) | My settings |
+| :--- | :--- | :--- | :--- | :--- |
+| **Display Refresh** | **90 Hz** | 72 Hz | 120 Hz | 90hz |
+| **Render Scale** | **1.00x** (Native) | 1.25x | 0.85x | 1.00x |
+| **MSAA** | **2x MSAA** | 4x MSAA | Off | Off |
+| **Layer Sharpening**| **Quality (MQSR)** | Quality (MQSR) | Normal | Normal |
+| **Foveation (FFR)** | **Level 2** | Level 1 | Level 3 | Off |
+| **AppSW** | Off | Off | On (60 → 120 FPS) | off in mono vr, on in stereo vr |
 
 ---
 
