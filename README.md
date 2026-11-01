@@ -375,9 +375,6 @@ Accessible directly in-game under:
 #### Q: How do I recenter my cockpit seat in VR?
 * **Solution**: Hold the **Left Grip** button and press the **X Button** on your left controller.
 
-#### Q: Can I use an Xbox or PlayStation controller?
-* **Solution**: Yes. Pair your Bluetooth gamepad with your Quest headset in Horizon OS Settings. It will control aircraft pitch, roll, yaw, and throttle natively.
-
 ---
 
 ## License & Disclaimer
