@@ -183,6 +183,9 @@ adb shell "rm -f /data/local/tmp/vr-controls.cfg /data/local/tmp/gc-map.mcf"
 
 ## Controls & Flight Mapping (`QUEST MAPPING`)
 
+**To enter VR mode use left grip + B**
+**STEREO VR or MONO VR change by right grip + X**
+
 The VR mod introduces an expanded controls menu accessible directly in the cockpit or main menu under:
 **`SETTINGS` -> `CONTROLS` -> `QUEST MAPPING`**.
 
