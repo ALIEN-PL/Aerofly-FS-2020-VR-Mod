@@ -48,6 +48,7 @@ The **Aerofly FS 2020 VR Mod** uses **OpenXR Interposer** (`libvrinterposer.so`)
   * Precision laser pointers for cockpit interactions.
   * Hand tracking in Stereo VR mode (poke, pinch up or down pull or push, pinch+rotate)
   * Plug-and-play USB HOTAS support via Quest USB-C port (tested T16000M FCS HOTAS + TWCS with usb-c hub)
+  * Virtual joystick. Use right meta quest touch controller as yoke
 * **Integrated In-Game Mod Menus**: Fully rendered within the simulator's UI under `SETTINGS -> CONTROLS -> QUEST MAPPING` and `SETTINGS -> GRAPHICS -> QUEST GRAPHICS`.
 * **State-of-the-Art VR Rendering Pipeline**:
   * **Normal or MQSR sharpening**: Hardware contrast-adaptive layer sharpening for ultra-crisp cockpit avionics.
