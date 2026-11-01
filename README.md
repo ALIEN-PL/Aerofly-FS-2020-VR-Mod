@@ -402,3 +402,4 @@ Accessible directly in-game under:
 * **Aerofly FS 2020** is a registered trademark of **IPACS**. This project is not affiliated with, endorsed by, or sponsored by IPACS or Meta Platforms, Inc.
 * This repository distributes **NO proprietary binaries, textures, models, sound files, or scenery data** from the original game. All original assets must be supplied by the user from their legally purchased copy.
 * Qualcomm Snapdragon Game Super Resolution (SGSR1) is subject to its respective license in `assets/third_party/sgsr1-LICENSE.txt`.
+
