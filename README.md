@@ -66,10 +66,10 @@ The **Aerofly FS 2020 VR Mod** uses a custom-engineered native **OpenXR Interpos
 
 > [!IMPORTANT]
 > **NO COPYRIGHTED GAME ASSETS ARE DISTRIBUTED IN THIS REPOSITORY.**
-> You **MUST** legally own a purchased copy of **Aerofly FS 2020** (`com.aerofly.aeroflyfs2020`) for Android. This repository contains only open-source hooking tools, the OpenXR interposer payload, and an automated patcher script to modify your own legally obtained copy.
+> You **MUST** legally own a purchased copy of **Aerofly FS 2020** (`com.aerofly.aeroflyfs2020`) for Android. This repository contains only open-source hooking tools, the OpenXR interposer payload, and an automated patcher script to add VR mode to your own legally obtained copy.
 
 ### 1. Game Files Required
-* **`base.apk`**: Original 64-bit APK (`com.aerofly.aeroflyfs2020`, ARM64-v8a, v20.20.xx), extracted from your Android device or Google Play backup.
+* **`base.apk`**: Original 64-bit APK (`com.aerofly.aeroflyfs2020`, ARM64-v8a, v20.20.54 - tested), extracted from your Android device or Google Play backup.
 * **Expansion Files (OBB)**:
   * `main.202043.com.aerofly.aeroflyfs2020.obb`
   * `patch.202013.com.aerofly.aeroflyfs2020.obb`
