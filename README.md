@@ -7,7 +7,7 @@
 
 A standalone, native **OpenXR Virtual Reality modification** and patcher for the Android release of **Aerofly FS 2020** (`com.aerofly.aeroflyfs2020`).
 
-This mod transforms the flat-screen mobile flight simulator into a fully immersive 6DoF VR experience running directly on Meta Quest headsets—with zero PC streaming required.
+This mod transforms the flat-screen mobile flight simulator into a fully immersive 6DoF VR standalone experience on Meta Quest 3 headset
 
 ---
 
@@ -38,27 +38,24 @@ This mod transforms the flat-screen mobile flight simulator into a fully immersi
 
 ## What is this Mod?
 
-The **Aerofly FS 2020 VR Mod** uses a custom-engineered native **OpenXR Interposer** (`libvrinterposer.so`) that dynamically hooks into the core simulation engine (`libaeroflyfs2020.so`). Rather than streaming video from a PC over AirLink/Virtual Desktop, the flight simulator executes natively on the headset's Snapdragon XR2 processor with direct hardware rendering.
+The **Aerofly FS 2020 VR Mod** uses **OpenXR Interposer** (`libvrinterposer.so`) that dynamically hooks into the core simulation engine
 
 ### Key Features
 
-* **Full 6DoF Head Tracking**: True positional (X/Y/Z) and rotational (Pitch/Yaw/Roll) tracking fed directly from Horizon OS OpenXR tracking spaces.
-* **Zero-Divergence Stereo 3D**: Separate projection and view matrices calculated per-eye with calibrated inter-pupillary distance (IPD) to eliminate cockpit double-vision and ocular strain.
+* **Full 6DoF Head Tracking**
+* **Mono or Stereo VR modes**
 * **Touch Controller Interaction**:
-  * Precision laser pointer with haptic clicks for all game menus and cockpit instruments.
-  * Flight surface control via physical thumbsticks and triggers.
-  * Direct 3D spatial grabbing of the virtual yoke/stick with physical tilt response.
-  * Optical hand tracking support: tap cockpit buttons and switches with your bare index finger.
-  * Plug-and-play USB HOTAS support via Quest USB-C port with interactive axis learning.
+  * Precision laser pointers for cockpit interactions.
+  * Hand tracking in Stereo VR mode (poke, pinch up or down pull or push, pinch+rotate)
+  * Plug-and-play USB HOTAS support via Quest USB-C port (tested T16000M FCS HOTAS + TWCS with usb-c hub)
 * **Integrated In-Game Mod Menus**: Fully rendered within the simulator's UI under `SETTINGS -> CONTROLS -> QUEST MAPPING` and `SETTINGS -> GRAPHICS -> QUEST GRAPHICS`.
 * **State-of-the-Art VR Rendering Pipeline**:
-  * **Qualcomm MQSR**: Hardware contrast-adaptive layer sharpening for ultra-crisp cockpit avionics.
-  * **Fixed Foveated Rendering (FFR)**: Concentrates shading power where your eyes look while lightening peripheral load.
-  * **Application SpaceWarp (AppSW)**: Motion-vector reprojection (renders at 45 FPS, displays at smooth 90 FPS).
-  * **Snapdragon Game Super Resolution (SGSR1)**: High-fidelity spatial edge-preserving upscaling.
+  * **Normal or MQSR sharpening**: Hardware contrast-adaptive layer sharpening for ultra-crisp cockpit avionics.
+  * **[EXPERIMENTAL] Fixed Foveated Rendering (FFR)**: Concentrates shading power where your eyes look while lightening peripheral load.
+  * **[EXPERIMENTAL] Application SpaceWarp (AppSW)**: Motion-vector reprojection 
+  * **[EXPERIMENTAL] Snapdragon Game Super Resolution (SGSR1)**: High-fidelity spatial edge-preserving upscaling.
   * **MSAA Hardware Anti-Aliasing (2x / 4x)**: Eliminates shimmer on runway markings and instrument needles.
   * **High Refresh Rates**: Native support for **72 Hz**, **90 Hz**, and **120 Hz** panel modes.
-* **Horizon OS (Android 14) Compliance**: All shared libraries and APK resources are strictly aligned to 16 KiB page boundaries (`zipalign -P 16 4`), satisfying Android 14 requirements on Snapdragon XR2 Gen 2 hardware.
 
 ---
 
