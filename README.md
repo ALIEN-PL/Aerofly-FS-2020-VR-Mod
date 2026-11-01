@@ -189,32 +189,15 @@ adb shell "rm -f /data/local/tmp/vr-controls.cfg /data/local/tmp/gc-map.mcf"
 The VR mod introduces an expanded controls menu accessible directly in the cockpit or main menu under:
 **`SETTINGS` -> `CONTROLS` -> `QUEST MAPPING`**.
 
-```text
-+-----------------------------------------------------------------------------------+
-|  [CONTROLS]  |  [QUEST MAPPING]                                                   |
-+-----------------------------------------------------------------------------------+
-|  [AIRCRAFT]  [VR SHORTCUTS]  [VIRTUAL JOYSTICK]  [USB HOTAS]  [HAND TOUCH]        |
-|                                                                                   |
-|  FUNCTION       INPUT          HOLD        DECREASE      MODE       INV           |
-|  -------------------------------------------------------------------------------  |
-|  Aileron        right.x        none        none          direct     [ ]           |
-|  Elevator       right.y        none        none          direct     [ ]           |
-|  Rudder         left.x         none        none          direct     [ ]           |
-|  Throttle       left.y         none        none          rate       [ ]           |
-|  Flaps          y              none        none          cycle      [ ]           |
-|  Gear           b              none        none          toggle     [ ]           |
-+-----------------------------------------------------------------------------------+
-```
-
 ### Default Touch Controller Layout
 setting can be changed in settings->controls->quest mapping
 
 | Input | Primary Function | With `Left Grip` Held | With `Right Grip` Held |
 | :--- | :--- | :--- | :--- |
 | **Left Stick Y** | Throttle (Rate mode: Push = Up, Pull = Down) | Cockpit Zoom | — |
-| **Left Stick X** | Rudder (Yaw) | Laser Gain (Pointer responsiveness) | Stereo Depth (IPD adjust) |
-| **Right Stick Y**| Elevator (Pitch) | Laser Depth (Pointer range) | Horizontal FOV Adjust |
-| **Right Stick X**| Ailerons (Roll) | Look Gain (Camera speed) | Render Scale Adjust |
+| **Left Stick X** | Rudder (Yaw) |  |  |
+| **Right Stick Y**| Elevator (Pitch) |  | Horizontal FOV Adjust |
+| **Right Stick X**| Ailerons (Roll) | | |
 | **Left Trigger** | Left Wheel Brake / Laser Click | — | — |
 | **Right Trigger**| Right Wheel Brake / Laser Click | — | — |
 | **Left Grip**    | VR Shortcut Modifier Button | — | — |
@@ -223,8 +206,8 @@ setting can be changed in settings->controls->quest mapping
 | **Y Button**     | Flaps (Cycle detents) | **Toggle HUD Horizon Mode** | — |
 | **A Button**     | Switch Camera View | **Reset View to Pilot Eyepoint** | — |
 | **B Button**     | Landing Gear (Toggle Up/Down) | **Toggle Flight Info Display** | — |
-| **Left Click**   | Toggle Left Controller Laser | Look X/Y Pan | — |
-| **Right Click**  | Toggle Right Controller Laser | Calibrate Neutral Center | — |
+| **Left thumbstick**   | Toggle Left Controller Laser | Look X/Y Pan | — |
+| **Right thumbstick**  | Toggle Right Controller Laser | | — |
 
 ---
 
@@ -249,7 +232,7 @@ Configure primary flight controls with full customization:
   * `cycle`: Steps sequentially through fixed detents (e.g., Flaps 0° → 10° → 20° → Full).
 * **`INV`**: Inverts the deflection axis.
 
-#### Subtab 2: VR Shortcuts
+#### Subtab 2: VR Shortcuts (some of them took part for testing and debugging ie. laser gain or look gain and will be removed in future updates)
 Dedicated hotkeys for headset operations:
 * **`RECENTER`**: Re-aligns head tracking origin and forward direction to your current seated position.
 * **`RESET VIEW`**: Restores the default eye viewpoint for the active aircraft.
@@ -277,6 +260,7 @@ Enables 3D spatial flight control without physical hardware:
 Connect real flight simulation peripherals directly to your Meta Quest:
 * Plug your USB joystick, throttle quadrant, or rudder pedals into the Quest USB-C port via an OTG adapter or USB-C hub.
 * Built-in **Auto-Learning Wizard**: Click any flight function on screen, move the desired physical axis or press a button on your HOTAS, and it binds immediately.
+* You can map brakes to button or use throttle 20% as a range for brakes
 
 #### Subtab 5: Optical Hand Tracking & Cockpit Poking
 Fly controller-free using Meta Quest optical hand tracking:
@@ -314,50 +298,50 @@ Accessible directly in-game under:
 * **`SHOW FPS AND HZ`**
   - Displays a real-time heads-up diagnostic overlay with current rendering FPS, frame delivery latency (in milliseconds), and the active display refresh rate.
 * **`RENDER SCALE`** (Default: `1.000`, Range: `0.500` to `1.500`)
-  - Eye buffer resolution multiplier. `1.0x` renders at native Quest 3 resolution (approx. 2064×2208 per eye). Lowering this boosts performance; raising it delivers ultra-sharp cockpit textures.
+  - Eye buffer resolution multiplier. `1.0x` renders at native Quest 3 resolution (approx. 2064×2208 per eye). Lowering this boosts performance; raising it delivers ultra-sharp cockpit textures but performance in stereo VR may be worse.
 * **`FOV` (Horizontal Field of View)** (Default: `98.127°`, Range: `70°` to `139°`)
   - Configures the horizontal camera projection angle. Defaults to matching the physical Quest 3 pancake optical geometry for zero geometric distortion.
 * **`STEREO DEPTH`** (Default: `1.000`, Range: `0.250` to `2.000`)
-  - Adjusts stereoscopic inter-pupillary distance (IPD) separation. Fine-tunes 3D depth perception and perceived cockpit scale to suit your vision comfort.
+  - Fine-tunes cockpit scale.
 * **`LASER DEPTH`** (Default: `1.500m`, Range: `0.5m` to `10.0m`)
   - Maximum projection reach of the controller laser pointer.
 * **`LASER GAIN`** (Default: `1.050`, Range: `0.5` to `1.5`)
   - Pointer sensitivity and smoothing on cockpit instrument panels.
 
 #### Page 2: Image Quality & Power Clocks
-* **`LAYER SHARPENING (MQSR)`** (Default: `Quality`)
+* **`LAYER SHARPENING`** (Default: `Quality`)
   - Meta Quest Super Resolution / Contrast Adaptive Sharpening (CAS) applied directly during OpenXR composition. Dramatically enhances readability of avionics dials, digital HUDs, and terrain textures.
 * **`AUTO LAYER FILTER`**
   - Enables hardware trilinear and anisotropic filtering on projection eye textures to prevent texture aliasing at oblique viewing angles.
 * **`LAYER SUPERSAMPLING`**
   - Engages a multi-tap bicubic texture sampler in the compositor during time-warp reprojection.
-* **`CPU PERFORMANCE`** (Default: `Level 2`, Range: `1` to `2`)
+* **`[NOT WORKING. Use QGO] CPU PERFORMANCE`** (Default: `Level 2`, Range: `1` to `2`)
   - Locks CPU clock tiers on the Snapdragon XR2 processor to prevent dynamic throttling stutters during dense scenery streaming.
-* **`GPU PERFORMANCE`** (Default: `Level 2`, Range: `1` to `2`)
+* **`[NOT WORKING. Use QGO] GPU PERFORMANCE`** (Default: `Level 2`, Range: `1` to `2`)
   - Locks GPU clock frequencies to ensure sustained frame delivery.
 * **`DISPLAY HZ`** (Default: `72 Hz`, Options: `72 Hz`, `90 Hz`, `120 Hz`)
-  - Headset display refresh rate. **90 Hz** is recommended on Quest 3 for the optimal balance of smoothness and visual fidelity.
+  - Headset display refresh rate.
 
 #### Page 3: Foveated Rendering & SpaceWarp
 * **`FOVEATED RENDERING (FFR)`** (Default: `Off` / Level `1` to `4`)
   - Adreno Fixed Foveated Rendering. Concentrates full GPU shading resolution in your central line of sight while rendering peripheral vision at reduced density. Yields up to 25% GPU performance savings.
 * **`APPLICATION SPACEWARP (AppSW)`**
-  - Generates OpenXR motion vectors to extrapolate frames. When enabled, the game engine renders at half the target rate (e.g. 45 FPS) while OpenXR delivers a smooth 90 FPS in the headset.
+  - Not recommended for MonoVR mode. Still experimental and may cause artifacting. 
 * **`SCENE MSAA`** (Default: `Off`, Options: `2x`, `4x`)
-  - Hardware Multisample Anti-Aliasing. Eliminates shimmering on runway lines, power lines, and aircraft cockpit struts.
+  - Recommended off. Hardware Multisample Anti-Aliasing. Eliminates shimmering on runway lines, power lines, and aircraft cockpit struts.
 * **`SWAPPY BYPASS`** (Default: `Enabled`)
   - Bypasses Android's default Choreographer frame pacer, synchronizing frame submission directly with OpenXR hardware vsync to eliminate stutter and reduce latency.
-* **`ENGINE LOOP PROBE` / `ENGINE FPS UNLOCK`**
+* **`ENGINE FPS UNLOCK`**
   - Decouples the simulation loop from Android's default 60 Hz mobile limit, allowing full 90 Hz or 120 Hz physics and frame rendering.
 * **`DISCARD MONO SOURCE`** (Default: `Enabled`)
   - Automatically discards the unused 2D mobile framebuffer from memory during stereoscopic rendering, saving memory bandwidth.
 
 #### Page 4 & 5: Advanced Optimization & Lens Tuning
-* **`EYE OUTPUT SCALE`**: Independent secondary scaling for OpenXR swapchain eye textures.
-* **`SGSR1 UPSCALER`**: Qualcomm Snapdragon Game Super Resolution 1.0 single-pass spatial upscaling.
+* **`EYE OUTPUT SCALE`**: Independent secondary scaling for OpenXR swapchain eye textures. Use with SGSR1.
+* **`SGSR1 UPSCALER`**: Not recommended. No significant changes at the moment. Qualcomm Snapdragon Game Super Resolution 1.0 single-pass spatial upscaling.
 * **`MONO HUD DRAW SKIP`**: Prevents redundant HUD draw passes during stereo rendering to reduce draw-call overhead.
 * **`ENGINE WORKER IDLE`**: Regulates background worker threads so the main simulation and rendering loops maintain high priority on performance CPU cores.
-* **`DIRECT XR TARGET`**: Renders directly into OpenXR swapchains, eliminating intermediate blits.
+* **`DIRECT XR TARGET`**: Renders directly into OpenXR swapchains, eliminating intermediate blits. Use with FFR.
 * **`FFR LENS CENTER` & `DOMINANT EYE`**: Calibrates the foveation sweet spot to align with Quest 3 pancake lens optical centers and asymmetrical eye dominance.
 
 ---
@@ -399,8 +383,6 @@ Accessible directly in-game under:
 ---
 
 ## License & Disclaimer
-
-* This project is an independent modification developed under reverse engineering and interposition principles.
 * **Aerofly FS 2020** is a registered trademark of **IPACS**. This project is not affiliated with, endorsed by, or sponsored by IPACS or Meta Platforms, Inc.
 * This repository distributes **NO proprietary binaries, textures, models, sound files, or scenery data** from the original game. All original assets must be supplied by the user from their legally purchased copy.
 * Qualcomm Snapdragon Game Super Resolution (SGSR1) is subject to its respective license in `assets/third_party/sgsr1-LICENSE.txt`.
